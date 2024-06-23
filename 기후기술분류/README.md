@@ -42,11 +42,11 @@ konlpy 형태소 분석기 Kkma Mecab Okt → **Okt** 사용
 #### 2. Model
 1) Modeling    
 - tensorflow `Sequential()`       
-- Embedding - (Batch Normalization) - Pooling(GAP) - (LSTM) - Dense - (Dropout) - Dense layer      
+- Embedding - (Batch Normalization) - Pooling(GAP) - (LSTM) - Dense(ReLU) - (Dropout) - Dense(Softmax) layer      
 - 성능 향상을 위해 적절하게 layer 추가 및 제거     
 
 2) Compile
-- loss : softmax (for multiclass classification) 
+- loss : cross entropy (for multiclass classification) 
 - optimizer : adam
 - metrics : accuracy
 
