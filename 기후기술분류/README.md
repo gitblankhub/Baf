@@ -27,14 +27,34 @@ konlpy 형태소 분석기 Kkma Mecab Okt → **Okt** 사용
 - 영어, 숫자, 특수문자 처리
 
 2) Preprocessing (전처리)
-- Stopwords(불용어) 제거
-- 토큰화, 정수인코딩 & 패딩
+- Stopwords(불용어) 제거 
+  - 조사 / 어미 / 접미사 / 접속사 파악 후 제거
+  - 잘못 분류된 경우 제거 
+  - 의미 없는 단어 & 자주 사용되는 단어 제거
+  - 길이가 1인 경우 제거 
+- 토큰화 & 정수 인코딩 & 패딩
+  -  토큰화 : 말뭉치를 벡터화하고 단어 집합 생성
+  -  정수 인코딩 : 텍스트 안 단어들을 숫자 시퀀스로
+  -  패딩 : 병렬연산을 위해 문장의 길이를 동일하게. post padding 적용
 - Word Embedding
-
+  단어를 sparse represetation(one-hot encoding)이 아닌 dense vector 형태로 표현. 실수 값을 가지며 저차원. 훈련 데이터로부터 학습.
+  
 #### 2. Model
+1) Modeling    
+- tensorflow `Sequential()`       
+- Embedding - (Batch Normalization) - Pooling(GAP) - (LSTM) - Dense - (Dropout) - Dense layer      
+- 성능 향상을 위해 적절하게 layer 추가 및 제거     
 
+2) Compile
+- loss : softmax (for multiclass classification) 
+- optimizer : adam
+- metrics : accuracy
+
+3) Fit
+- epoch = 20
+- 8:2 비율로 나누어 학습    
+(+) use EarlyStopping to avoid overfitting 
 
 #### 3. Predict and Submit 
 
 
-#### 2. 
