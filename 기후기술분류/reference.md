@@ -7,10 +7,10 @@ For Study
 워드 임베딩 : https://wikidocs.net/22644     
 
 
-#### understaing NLP concepts 
-+ Text preprocessing 설명 
-https://marketingscribbler.tistory.com/20#Sentence_Tokenization 
-+ NLP 정리
+#### (+) understaing NLP concepts 
+Text preprocessing 설명    
+https://marketingscribbler.tistory.com/20#Sentence_Tokenization    
+NLP 정리     
 https://han-py.tistory.com/category/%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5%28Artificial%20Intelligence%29/%EC%9E%90%EC%97%B0%EC%96%B4%20%EC%B2%98%EB%A6%AC%28natural%20language%20processing%29?page=1
 
 ## Tensorflow Model
