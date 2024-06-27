@@ -9,7 +9,7 @@ DACON link : https://dacon.io/competitions/official/235689/overview/description
 time 간격은 0.02초 즉, 한 ID별로 12초동안 운동 측정     
 총 61가지 운동 동작 분류     
 
-## 0. Read Data 
+### 0. Read Data 
 `train_features.csv`
 : id별 600 time간 동작 데이터. 
 - 3125 ids x 600 time = 1875000 obs    
@@ -27,5 +27,23 @@ time 간격은 0.02초 즉, 한 ID별로 12초동안 운동 측정
 
 `sample_submission.csv` : submission 
 
+### 1. Explore data 
+Through visualization, 
+- label 별 id 수 count -> It is imbalanced data that 'Non Exercise' label is absolutely high amount. 
+- 5~6 id's time-acc time-gy plot & correlation heatmap -> apprehending the trend in each exercise, and see whether there is correlation between acc & gy measurement.     
+  ex) label 1 Band Pull-Down Row plot the time-acc time-gy plot and see the exercise's features (like acc x axis movement is higher than other acc axises)
 
+
+
+
+
+### Weakness in 1D CNN :(
+- spends a loooooong time to train model -> fix layers / need to tune hyperparmeters 
+- imbalanced data -> use augmentation in lower case labels
+- no way to explain how this model classifies the labels
+
+Questions..! 
+approach as time series data .. ? 
+functional data anaylsis .. ?
+highly imbalanced data .. how to solve this problem? 
 
