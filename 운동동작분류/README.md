@@ -13,12 +13,19 @@ time 간격은 0.02초 즉, 한 ID별로 12초동안 운동 측정
 `train_features.csv`
 : id별 600 time간 동작 데이터. 
 - 3125 ids x 600 time = 1875000 obs    
-- 8 vars (id, time, acc_x, acc_y, acc_z, gy_x gy_y gy_z) 
+- 8 vars (id, time, acc_x, acc_y, acc_z, gy_x gy_y gy_z)
+  
 `train_labels.csv` 
 : id별 동작과 동작 label(61 kinds) 
-: 3125 obs and 3 vars 
+- 3125 obs
+- 3 vars (id, label, label_desc)
+
 `test_features.csv` 
-: id별 600 time간 동작 데이터. 782 ids x 600 time = 469200 obs 
-: 8 vars
+: id별 600 time간 동작 데이터. 
+- 782 ids x 600 time = 469200 obs
+- 8 vars
 
 `sample_submission.csv` : submission 
+
+
+
