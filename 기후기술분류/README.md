@@ -18,6 +18,9 @@ DACON link : https://dacon.io/competitions/official/235744/overview/description
 `sample_submission.csv` : (43576, 2)      
 `labels_mapping.csv` : label과 기후기술분류체계를 mapping 한 meta data
 
+*variables*  
+index / 제출년도 / 사업명 / 사업_부처명 / 계속과제여부 / 내역사업명 / 과제명 / 요약문_연구목표 / 요약문_연구내용 / 요약문_기대효과 / 요약문_한글키워드 / 요약문_영문키워드 / **label**
+
 #### 1. Konlpy 자연어 처리 
 konlpy 형태소 분석기 Kkma Mecab Okt → **Okt** 사용
 
