@@ -36,16 +36,14 @@ Through visualization,
   ex) label 1 Band Pull-Down Row plot the time-acc time-gy plot and see the exercise's features (like acc x axis movement is higher than other acc axises)
 
 ### 2. EDA 
-2-1. 파생변수        
+- 2-1. 파생변수        
 `acc` : acceleartion vector $\sqrt{x^2+y^2+z^2}$     
 `gy` : gyroscope vector $\sqrt{x^2+y^2+z^2}$   
 
-
-2-2. scaling      
+- 2-2. scaling      
 Standard scaling : mean=0 var=1  $\frac{x-\mu}{\sigma}$   
 
-
-2-3. reshaping
+- 2-3. reshaping       
 train (1875000, 8)     
 -> X (3125, 600, 8) : explanatory var, 3125 ids 600 times 8 features [3D input - Batchsize, Width, Channels]    
 train_labels (3125, 3)     
@@ -53,20 +51,39 @@ train_labels (3125, 3)
 test (469200, 8)     
 -> X (782, 600, 8) : 782 ids 600 times 8 features     
 
-
-
-
 ### 3. Model 
+
+- Model 1 Structure    
+(Conv1d - Batch normalization - MaxPooling1D - Dropout) layers - (Flatten - Dense - Batch normalization/Activation) layers
+
+- Model 2 Structure     
+(Conv1d - Batch normalization - Dropout) layers - (GlobalAveragePooling1D - Dense - Activation)  
+
+Stratified K(=5) fold 이용 (imbalanced data를 위한 kfold)      
+train - epochs=50, batchsize=64, using early stopping(criterion=validation loss, patience=8)   
+
+convolution layer hyperparameter    
+kernel_size = 60 (time step 60씩 보기)  
+filters = 256 - 128 - 64 (output filter 수)   
+strides = 3 (kernel 3씩 이동하면서)   
+activation = relu   
+
+output layer   
+activation = softmax  
+optimizer = Adam    
+learning rate = 0.001    
+loss = categorical crossentropy   
+metrics = accuracy    
+
 
 
 
 ### Weakness in 1D CNN :(
 - spends a loooooong time to train model -> fix layers / need to tune hyperparmeters 
-- imbalanced data -> use augmentation in lower case labels
 - no way to explain how this model classifies the labels
 
-Questions..! 
-approach as time series data .. ? 
-functional data anaylsis .. ?
-highly imbalanced data .. how to solve this problem? 
+Questions  
+imbalanced data -> use augmentation -> but lower performance?, highly imbalanced data .. how to solve this problem?      
+approach as time series data .. ?     
+functional data anaylsis .. ?    
 
