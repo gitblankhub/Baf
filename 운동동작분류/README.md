@@ -37,8 +37,8 @@ Through visualization,
 
 ### 2. EDA 
 - 2-1. 파생변수        
-`acc` : acceleartion vector $\sqrt{x^2+y^2+z^2}$     
-`gy` : gyroscope vector $\sqrt{x^2+y^2+z^2}$   
+`acc` : acceleartion vector $\sqrt{acc_x^2+acc_y^2+acc_z^2}$     
+`gy` : gyroscope vector $\sqrt{gy_x^2+gy_y^2+gy_z^2}$   
 
 - 2-2. scaling      
 Standard scaling : mean=0 var=1  $\frac{x-\mu}{\sigma}$   
@@ -56,7 +56,7 @@ test (469200, 8)
 - Model 1 Structure    
 (Conv1d - Batch normalization - MaxPooling1D - Dropout) layers - (Flatten - Dense - Batch normalization/Activation) layers
 
-- Model 2 Structure     
+- ***Model 2 Structure***     
 (Conv1d - Batch normalization - Dropout) layers - (GlobalAveragePooling1D - Dense - Activation)  
 
 Stratified K(=5) fold 이용 (imbalanced data를 위한 kfold)      
@@ -76,6 +76,7 @@ loss = categorical crossentropy
 metrics = accuracy    
 
 
+### 4. Predict 
 
 
 ### Weakness in 1D CNN :(
