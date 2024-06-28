@@ -6,8 +6,10 @@ DACON link : https://dacon.io/competitions/official/235689/overview/description
 분석 목적 : 3축 가속도계(accelerometer)와 3축 자이로스코프(gyroscope)를 활용해 측정된 센서 데이터를 이용해 운동 동작 인식 알고리즘 개발 
 
 3125개의 ID별로 0~599 time 마다 가속도, 자이로스코프 측정    
+![image](https://github.com/gitblankhub/Baf/assets/99718641/cc3a2703-2f21-4f41-a7a5-c20d14f63358)    
 time 간격은 0.02초 즉, 한 ID별로 12초동안 운동 측정     
 총 61가지 운동 동작 분류     
+
 
 ### 0. Read Data 
 `train_features.csv`
@@ -33,7 +35,28 @@ Through visualization,
 - 5~6 id's time-acc time-gy plot & correlation heatmap -> apprehending the trend in each exercise, and see whether there is correlation between acc & gy measurement.     
   ex) label 1 Band Pull-Down Row plot the time-acc time-gy plot and see the exercise's features (like acc x axis movement is higher than other acc axises)
 
+### 2. EDA 
+2-1. 파생변수        
+`acc` : acceleartion vector $\sqrt{x^2+y^2+z^2}$     
+`gy` : gyroscope vector $\sqrt{x^2+y^2+z^2}$   
 
+
+2-2. scaling      
+Standard scaling : mean=0 var=1  $\frac{x-\mu}{\sigma}$   
+
+
+2-3. reshaping
+train (1875000, 8)     
+-> X (3125, 600, 8) : explanatory var, 3125 ids 600 times 8 features [3D input - Batchsize, Width, Channels]    
+train_labels (3125, 3)     
+-> y (3125, 61) : target var, 3125 ids & 61 one hot encoding labels     
+test (469200, 8)     
+-> X (782, 600, 8) : 782 ids 600 times 8 features     
+
+
+
+
+### 3. Model 
 
 
 
