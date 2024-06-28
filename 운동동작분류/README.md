@@ -47,7 +47,7 @@ Standard scaling : mean=0 var=1  $\frac{x-\mu}{\sigma}$
 train (1875000, 8)     
 -> X (3125, 600, 8) : explanatory var, 3125 ids 600 times 8 features [3D input - Batchsize, Width, Channels]    
 train_labels (3125, 3)     
--> y (3125, 61) : target var, 3125 ids & 61 one hot encoding labels     
+-> y (3125, 61) : target var, 3125 ids & **61** one hot encoding labels     
 test (469200, 8)     
 -> X (782, 600, 8) : 782 ids 600 times 8 features     
 
@@ -67,8 +67,11 @@ kernel_size = 60 (time step 60씩 보기)
 filters = 256 - 128 - 64 (output filter 수)   
 strides = 3 (kernel 3씩 이동하면서)   
 activation = relu   
+(Pytorch `Conv1d` https://pytorch.org/docs/stable/generated/torch.nn.Conv1d.html)  
+
 
 output layer   
+dense = 61       
 activation = softmax  
 optimizer = Adam    
 learning rate = 0.001    
@@ -84,7 +87,8 @@ metrics = accuracy
 - no way to explain how this model classifies the labels
 
 *Questions*     
-imbalanced data -> use augmentation -> but lower performance?, highly imbalanced data .. how to solve this problem?      
+imbalanced data -> use augmentation -> but lower performance?, highly imbalanced data .. how to solve this problem?   
+how to set layers and hyperparameters ?
 approach as time series data .. ?     
 functional data anaylsis .. ?    
 
