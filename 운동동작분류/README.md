@@ -79,11 +79,11 @@ metrics = accuracy
 ### 4. Predict 
 
 
-### Weakness in 1D CNN :(
+### (+) Weakness in 1D CNN Model :(
 - spends a loooooong time to train model -> fix layers / need to tune hyperparmeters 
 - no way to explain how this model classifies the labels
 
-Questions  
+*Questions*     
 imbalanced data -> use augmentation -> but lower performance?, highly imbalanced data .. how to solve this problem?      
 approach as time series data .. ?     
 functional data anaylsis .. ?    
