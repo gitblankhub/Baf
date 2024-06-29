@@ -39,6 +39,39 @@ JUN 2022 - JUL 2022
 
 ### 3. Unsupervised Learning : PCA & Clustering 
 
+- 주성분 분석
+  연속형 변수 간 상관관계 존재 
+  기상 관련 연속형 변수 주성분 분석을 통해 차원 축소 
+
+- 군집 분석
+  주성분 분석 결과 pc1, pc2를 기준으로 k-means clustering
+
+### 4. Classification Model         
+대형 산불 여부를 target 변수로 하는 분류 모형. 
+- 7:3 Cross Validation
+- SMOTE(Synthetic Minority Over-sampling Technique) Oversampling 으로 불균형 해소
+
+- Model Comparison
+  
+||PCA 변수 추가 X | PCA 변수 추가|
+|------|---|---|
+|Random Forest|acc=0.97 f1=0.22|acc=0.93 f1=0.12|
+|Light GBM|acc=0.94 f1=0.14|**acc=0.93 f1=0.11**|
+|Logistic Regression|acc=0.84 f1=0.25|acc=0.90 f1=0.27|
+|KNN|acc=0.97 f1=0.49|acc=0.97 f1=0.49|
+
+Check Random Forest Feature importance result. 
+
+### 5. Conclusion 
+바람이 불지 않고 습한 조건, 발생월과 시간대, 화재 지역 강릉/춘천/삼척 여부, 일조량을 나타내는 변수가 대형 산불을 분류하는데 중요한 변수.      
+관측일과 시간에 따라 기상 관측값 중 풍속과 습도, 일조량을 고려하여 산불 감시 구역을 선정     
+특히 강릉, 춘천, 삼척 지역에서 나타나는 기상 변화를 주의 깊게 관찰하고 대응
+
+
+### Drawback 
+
+- not significant conclusion through Clustering
+- limitation of only using 10 years weather information. Need longer term dataset or geographical/firefighting informative datasets. 
 
 
 
