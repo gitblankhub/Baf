@@ -86,9 +86,10 @@ metrics = accuracy
 - spends a loooooong time to train model -> fix layers / need to tune hyperparmeters 
 - no way to explain how this model classifies the labels
 
+
 *Questions*     
 imbalanced data -> use augmentation -> but lower performance?, highly imbalanced data .. how to solve this problem?   
-how to set layers and hyperparameters ?
-approach as time series data .. ?     
-functional data anaylsis .. ?    
+how to set layers and hyperparameters ?      
+approach as time series data .. ? Or applying CNN-LSTM structures             
+functional data anaylsis .. ?      
 
