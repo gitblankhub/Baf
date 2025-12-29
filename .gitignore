@@ -1,0 +1,12 @@
+.DS_Store
+
+__pycache__/
+*.py[cod]
+*.so
+
+.ipynb_checkpoints/
+
+Bike/ipynb
+Climate/ipynb
+
+
